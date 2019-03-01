@@ -52,7 +52,9 @@
               large 
               title="Edit"
               class="link-href"
-              @click="editWebsite(props.item.id)">
+              @click.prevent="editWebsite(props.item.id)"
+              href = "#"
+            >
               <v-icon color="warning">edit</v-icon>
             </v-btn>
           </td>
