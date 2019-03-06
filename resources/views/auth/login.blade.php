@@ -3,9 +3,14 @@
     <v-container fluid grid-list-lg>
         <v-layout justify-center row>
             <v-flex xs12 sm10 md8 lg6 xl4>    
-                <v-card color="blue-grey lighten-4" class="white--text" >
-                    <v-card-title style="background:#435b71">                     
-                        <h5 style="margin:0">User {{ __('Login') }}</h5>                   
+                <v-card>
+                    <v-card-title 
+                        class="cya_head white--text headline" 
+                        style="padding:12px"
+                    >    
+                        <v-icon medium class="cya_c" color="white">input</v-icon>
+                        &nbsp;                       
+                        User {{ __('Login') }}                       
                     </v-card-title>
                     <v-card-actions>
                         <v-layout justify-center row>
@@ -19,9 +24,10 @@
                                             type="email"                                                
                                             label="{{ __('E-Mail Address') }}"                                                
                                             name="email"
-                                            value=" {{ old('email') }}"                                                     
-                                            required
-                                            placeholder="{{ old('email') }}"                                                    
+                                            value="{{ old('email') }}"                                                   
+                                            placeholder="{{ __('E-Mail Address') }}"      
+                                            color="#1e6aad"    
+                                            required                                          
                                         ></v-text-field>                                      
                                         @if ($errors->has('email'))
                                             <span class="invalid-feedback" role="alert">
@@ -35,11 +41,10 @@
                                             id="password"
                                             type="password"                                            
                                             label="{{ __('Password') }}"                                        
-                                            name="password"
-                                            value=" "
-                                            placeholder="{{ old('password') }}"
+                                            name="password"                                                                                     
+                                            placeholder="{{ __('Password') }}"
+                                            color="#1e6aad"
                                             required
-                                            hide-details
                                         ></v-text-field>
                                         @if ($errors->has('password'))
                                             <span class="invalid-feedback" role="alert">
@@ -48,30 +53,33 @@
                                         @endif
                                     </div>                                
                                     <div>    
-                                        <v-checkbox color="#4caf50" label="{{ __('Remember Me') }}"></v-checkbox>
+                                        <v-checkbox                                        
+                                            color="#1e6aad"
+                                            label="{{ __('Remember Me') }}"                                            
+                                        ></v-checkbox>
                                     </div>
                                     <div>                                      
-                                        <v-btn 
-                                            block                               
-                                            color="success"
+                                        <v-btn
+                                            block                              
                                             type="submit"
-                                            style="background-color: #4caf50; margin:8px 0"
+                                            color="#1e6aad"
+                                            class="white--text"
+                                            style=" margin:8px 0"
                                         >
-                                            <v-icon left >input</v-icon>
-                                            {{ __('Login') }}          
+                                            <v-icon left color="white">input</v-icon>
+                                            {{ __('Login') }}
                                         </v-btn> 
                                         <v-btn
-                                        block
-                                        
-                                        flat
-                                        style="margin:8px 0"
-                                        >       
-                                        <a class="btn btn-link" href="{{ route('password.request') }}" >
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
+                                            block                                        
+                                            flat                                           
+                                            color="#1e6aad"   
+                                            class="link-href"   
+                                            style="margin:8px 0"                                            
+                                            href="{{ route('password.request') }}"
+                                        > 
+                                        {{ __('Forgot Your Password?') }}
                                         </v-btn>
-                                    </div>
-                                       
+                                    </div>                                       
                                 </form>
                             </v-flex>
                         </v-layout>

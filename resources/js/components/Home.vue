@@ -11,7 +11,7 @@
     >
       <template slot="headers" slot-scope="props">
         <tr>
-          <th class="cya_hed white--text subheading"
+          <th class="cya_head white--text subheading"
             v-for="header in props.headers"
             :key="header.text"
             :class="['column sortable', pagination.descending ? 'desc' : 'asc', header.value === pagination.sortBy ? 'active' : '']"
@@ -25,7 +25,7 @@
           <td colspan="5"></td>
           <td>
             <v-btn flat fab large title="Add" @click="addWebsite">
-              <v-icon color="success">note_add</v-icon>
+              <v-icon color="#0b2c5d">note_add</v-icon>
             </v-btn>
           </td> 
         </tr>
@@ -55,7 +55,7 @@
               @click.prevent="editWebsite(props.item.id)"
               href = "#"
             >
-              <v-icon color="warning">edit</v-icon>
+              <v-icon color="#0b2c5d">edit</v-icon>
             </v-btn>
           </td>
           <td>
@@ -68,7 +68,7 @@
               @click.prevent="openDeleteWebsite(props.item.id)"
               href = "#"
             >
-              <v-icon color="error">delete_forever</v-icon>
+              <v-icon color="#1e6aad">delete_forever</v-icon>
             </v-btn>
           </td>
           <td>       
@@ -81,7 +81,7 @@
               @click.prevent="getcodeWebsite(props.item.key)"
               href = "#"
             >
-              <v-icon color="info">code</v-icon>
+              <v-icon color="#049bf6">code</v-icon>
             </v-btn>           
           </td>
         </tr>
@@ -93,7 +93,8 @@
     >  
       <v-card>
         <v-card-title
-          class="cya_hed white--text headline"
+          class="cya_head white--text headline"
+          style="padding:12px"
         >
           <v-icon medium class="cya_c" color="white">code</v-icon>
           &nbsp;
@@ -246,7 +247,7 @@
   background-color: #f37021;
   color:white;
 }
-.cya_hed{
+.cya_head{
   background-color:#1e6aad;
  /*background-color:#007ff2;*/
 }
